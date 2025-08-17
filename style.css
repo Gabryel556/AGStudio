@@ -93,9 +93,11 @@ body {
 
 /* Seção "Jogos" */
 /* Menu Secundário de Jogos (Menor e Estilizado) */
-.secondary-game-menu { 
-    background-color: #161625; 
-    padding: 0.5rem 0; 
+.secondary-game-menu {
+    background-color: #1c1c1c; /* Fundo um pouco mais claro para a barra do menu */
+    padding: 1rem 0;
+    border-top: 1px solid #2a2a2a;
+    border-bottom: 1px solid #2a2a2a;
 }
 .secondary-game-menu ul { 
     display: flex; 
@@ -103,24 +105,41 @@ body {
     list-style: none; 
     padding: 0; 
 }
-.secondary-game-menu .game-menu-link { 
-    color: #a7a7a7; 
-    text-decoration: none; 
-    padding: 0.5rem 1rem; 
-    font-size: 0.9rem; /* Fonte menor */ 
-    font-weight: 700; 
-    border-radius: 20px; /* Borda arredondada */ 
-    margin: 0 0.5rem; 
-    transition: all 0.3s ease; 
+
+.secondary-game-menu .game-menu-link {
+    font-family: 'Orbitron', sans-serif; /* Fonte futurista */
+    color: #a7a7a7;
+    background-color: #2a2a2a; /* Fundo cinza escuro do botão */
+    border: 1px solid #444; /* Borda sutil */
+    text-decoration: none;
+    padding: 0.6rem 1.8rem; /* Ajuste no tamanho */
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 5px; /* Bordas menos arredondadas */
+    margin: 0 0.5rem;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
-.secondary-game-menu .game-menu-link:hover { 
-    color: #ffffff; 
-    background-color: rgba(0, 191, 255, 0.2); 
+
+.secondary-game-menu .game-menu-link:hover {
+    color: #ffffff;
+    border-color: #00BFFF; /* Borda fica azul no hover */
+    box-shadow: 0 0 10px rgba(0, 191, 255, 0.3); /* Adiciona um brilho sutil */
 }
-.secondary-game-menu .game-menu-link.active { 
-    color: #0d0d0d; 
-    background-color: #00BFFF; 
+
+.secondary-game-menu .game-menu-link.active {
+    color: #ffffff;
+    background-color: #00BFFF; /* Fundo fica azul quando ativo */
+    border-color: #00BFFF;
+    /* Efeito de texto delineado */
+    text-shadow: 
+        -1px -1px 0 #0d0d0d,  
+         1px -1px 0 #0d0d0d,
+        -1px  1px 0 #0d0d0d,
+         1px  1px 0 #0d0d0d;
 }
+
 
 /* Container da Prévia dos Jogos */
 .game-preview-container { 
