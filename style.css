@@ -130,9 +130,8 @@ body {
 
 .secondary-game-menu .game-menu-link.active {
     color: #ffffff;
-    background-color: #00BFFF; /* Fundo fica azul quando ativo */
+    background-color: #00BFFF;
     border-color: #00BFFF;
-    /* Efeito de texto delineado */
     text-shadow: 
         -1px -1px 0 #0d0d0d,  
          1px -1px 0 #0d0d0d,
@@ -140,8 +139,6 @@ body {
          1px  1px 0 #0d0d0d;
 }
 
-
-/* Container da Prévia dos Jogos */
 .game-preview-container { 
     padding: 3rem 2rem; 
     max-width: 1100px; 
@@ -162,7 +159,6 @@ body {
 }
 @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
-/* Elementos da Prévia (mesmos de antes) */
 .game-image { 
     width: 55%; 
     object-fit: cover; 
@@ -196,7 +192,6 @@ body {
     transform: scale(1.05); 
 }
 
-/* Rodapé (Footer) */
 footer { 
     text-align: center; 
     padding: 2rem; 
@@ -208,8 +203,8 @@ footer {
 .discord-pm-button {
     display: inline-block;
     padding: 8px 18px;
-    border: 2px solid #8e44ad; /* Borda no tom roxo principal */
-    color: #cda5ff; /* Texto no tom roxo claro */
+    border: 2px solid #7c2fe0de;
+    color: #8257d1;
     background-color: transparent;
     border-radius: 20px;
     text-decoration: none;
@@ -218,8 +213,8 @@ footer {
 }
 
 .discord-pm-button:hover {
-    background-color: #8e44ad; /* Fundo fica roxo ao passar o mouse */
-    color: #ffffff; /* Texto fica branco */
+    background-color: #55498a77;
+    color: #ffffff;
     transform: scale(1.05);
     box-shadow: 0 0 15px rgba(142, 68, 173, 0.4);
 }
