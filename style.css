@@ -1,158 +1,217 @@
 /* Reset Básico e Tema Preto */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #0d0d0d;
-    color: #f0f0f0;
-    line-height: 1.6;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+body { 
+    font-family: 'Roboto', sans-serif; 
+    background-color: #0d0d0d; 
+    color: #f0f0f0; 
+    line-height: 1.6; 
+    display: flex; 
+    flex-direction: column; 
+    min-height: 100vh; 
 }
 
-/* Cabeçalho com Logo */
-.main-header {
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    padding: 2.5rem 1rem;
-    border-bottom: 1px solid #2a2a2a; /* Borda sutil */
+/* Cabeçalho */
+.main-header { 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    padding: 2.5rem 1rem; 
+    border-bottom: 1px solid #2a2a2a; 
 }
-.header-logo {
-    height: 50px; /* Ajuste o tamanho do logo conforme preferir */
-    margin-right: 15px;
+.header-logo { 
+    height: 50px; 
+    margin-right: 15px; 
 }
-.main-title {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 2.5rem;
-    color: #ffffff;
-    letter-spacing: 3px;
-    text-shadow: 0 0 10px rgba(0, 191, 255, 0.4); /* Brilho azul sutil */
+.main-title { 
+    font-family: 'Orbitron', sans-serif; 
+    font-size: 2.5rem; 
+    color: #ffffff; 
+    letter-spacing: 3px; 
+    text-shadow: 0 0 10px rgba(0, 191, 255, 0.4); 
 }
 
-/* Menu de Navegação Horizontal */
-.game-menu ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    padding: 1rem 0;
-    background-color: #121212;
+/* Menu de Navegação Principal */
+.primary-nav ul { 
+    display: flex; 
+    justify-content: center; 
+    list-style: none; 
+    padding: 0; 
+    background-color: #121212; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); 
 }
-.game-menu-link {
-    color: #a7a7a7;
-    text-decoration: none;
-    padding: 0.8rem 1.5rem;
-    font-size: 1.1rem;
-    font-weight: 700;
-    position: relative;
-    transition: color 0.3s ease;
+.primary-nav-link { 
+    color: #a7a7a7; 
+    text-decoration: none; 
+    padding: 1rem 2rem; 
+    font-size: 1.2rem; 
+    font-weight: 700; 
+    transition: all 0.3s ease; 
+    border-bottom: 4px solid transparent; 
 }
-.game-menu-link::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 0;
-    height: 3px;
-    background-color: #00BFFF; /* Azul elétrico do logo */
-    transition: all 0.4s ease-in-out;
-    transform: translateX(-50%);
+.primary-nav-link:hover { 
+    color: #ffffff; 
+    border-bottom-color: rgba(0, 191, 255, 0.5); 
 }
-.game-menu-link:hover, .game-menu-link.active {
-    color: #ffffff;
+.primary-nav-link.active { 
+    color: #ffffff; 
+    border-bottom-color: #00BFFF; 
 }
-.game-menu-link.active::after {
-    width: 100%;
+
+/* Container do Conteúdo Principal */
+#main-content { 
+    flex-grow: 1; 
+}
+.main-content-section { 
+    display: none; 
+}
+.main-content-section.active { 
+    display: block; 
+    animation: fadeIn 0.5s ease; 
+}
+
+/* Seção "Quem Somos" */
+.about-us-content { 
+    max-width: 800px; 
+    margin: 4rem auto; 
+    padding: 2rem; 
+    text-align: center; 
+}
+.about-us-content h2 { 
+    font-family: 'Orbitron', sans-serif; 
+    font-size: 2.5rem; 
+    margin-bottom: 1rem; 
+    color: #00BFFF; 
+}
+.about-us-content p { 
+    font-size: 1.1rem; 
+    color: #b3b3b3; 
+}
+
+/* Seção "Jogos" */
+/* Menu Secundário de Jogos (Menor e Estilizado) */
+.secondary-game-menu { 
+    background-color: #161625; 
+    padding: 0.5rem 0; 
+}
+.secondary-game-menu ul { 
+    display: flex; 
+    justify-content: center; 
+    list-style: none; 
+    padding: 0; 
+}
+.secondary-game-menu .game-menu-link { 
+    color: #a7a7a7; 
+    text-decoration: none; 
+    padding: 0.5rem 1rem; 
+    font-size: 0.9rem; /* Fonte menor */ 
+    font-weight: 700; 
+    border-radius: 20px; /* Borda arredondada */ 
+    margin: 0 0.5rem; 
+    transition: all 0.3s ease; 
+}
+.secondary-game-menu .game-menu-link:hover { 
+    color: #ffffff; 
+    background-color: rgba(0, 191, 255, 0.2); 
+}
+.secondary-game-menu .game-menu-link.active { 
+    color: #0d0d0d; 
+    background-color: #00BFFF; 
 }
 
 /* Container da Prévia dos Jogos */
-.game-preview-container {
-    padding: 3rem 2rem;
-    max-width: 1100px;
-    margin: 0 auto;
-    flex-grow: 1; /* ESTA LINHA FAZ O CONTEÚDO CRESCER E EMPURRAR O RODAPÉ */
+.game-preview-container { 
+    padding: 3rem 2rem; 
+    max-width: 1100px; 
+    margin: 0 auto; 
 }
-.game-preview {
-    display: none;
-    align-items: center;
-    gap: 3rem;
-    background-color: #1c1c1c;
-    border-radius: 10px;
-    overflow: hidden;
-    border: 1px solid #2a2a2a;
-    animation: fadeIn 0.6s ease-in-out;
+.game-preview { 
+    display: none; 
+    align-items: center; 
+    gap: 3rem; 
+    background-color: #1c1c1c; 
+    border-radius: 10px; 
+    overflow: hidden; 
+    border: 1px solid #2a2a2a; 
+    animation: fadeIn 0.6s ease; 
 }
-.game-preview.active {
-    display: flex;
+.game-preview.active { 
+    display: flex; 
 }
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Elementos da Prévia (mesmos de antes) */
+.game-image { 
+    width: 55%; 
+    object-fit: cover; 
+}
+.game-info { 
+    padding: 2rem; 
+}
+.game-info h2 { 
+    font-family: 'Orbitron', sans-serif; 
+    font-size: 2.2rem; 
+    color: #ffffff; 
+    margin-bottom: 1rem; 
+}
+.game-info p { 
+    font-size: 1.1rem; 
+    margin-bottom: 2rem; 
+    color: #b3b3b3; 
+}
+.game-button { 
+    background-color: #00BFFF; 
+    color: #0d0d0d; 
+    padding: 0.8rem 2rem; 
+    border-radius: 5px; 
+    text-decoration: none; 
+    font-weight: bold; 
+    text-transform: uppercase; 
+    transition: background-color 0.3s ease, transform 0.2s ease; 
+}
+.game-button:hover { 
+    background-color: #33ccff; 
+    transform: scale(1.05); 
 }
 
-/* Elementos da Prévia */
-.game-image {
-    width: 55%;
-    object-fit: cover;
-}
-.game-info {
-    padding: 2rem;
-}
-.game-info h2 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 2.2rem;
-    color: #ffffff;
-    margin-bottom: 1rem;
-}
-.game-info p {
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
-    color: #b3b3b3;
-}
-.game-button {
-    background-color: #00BFFF;
-    color: #0d0d0d;
-    padding: 0.8rem 2rem;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    text-transform: uppercase;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-.game-button:hover {
-    background-color: #33ccff;
-    transform: scale(1.05);
+/* Rodapé (Footer) */
+footer { 
+    text-align: center; 
+    padding: 2rem; 
+    background-color: #000; 
+    border-top: 1px solid #2a2a2a; 
+    color: #888; 
 }
 
-footer {
-    display: flex;
-    flex-wrap: wrap; /* Permite que os itens quebrem a linha em telas pequenas */
-    justify-content: center;
-    align-items: center;
-    gap: 20px; /* Espaço entre o texto e o botão */
-    padding: 2rem;
-    background-color: #000000; /* Fundo preto para o rodapé */
-    border-top: 1px solid #2a2a2a; /* Linha sutil de separação */
-    color: #888; /* Cor do texto de direitos autorais */
-    font-size: 0.9rem;
-}
-
-/* Estilo do Botão de Mensagem Privada do Discord */
 .discord-pm-button {
     display: inline-block;
     padding: 8px 18px;
-    border: 2px solid #00BFFF; /* Borda no tom de azul do logo */
-    color: #00BFFF; /* Texto no tom de azul */
+    border: 2px solid #8e44ad; /* Borda no tom roxo principal */
+    color: #cda5ff; /* Texto no tom roxo claro */
     background-color: transparent;
-    border-radius: 20px; /* Bordas arredondadas */
+    border-radius: 20px;
     text-decoration: none;
     font-weight: bold;
     transition: all 0.3s ease;
 }
 
 .discord-pm-button:hover {
-    background-color: #00BFFF; /* Fundo fica azul ao passar o mouse */
-    color: #0d0d0d; /* Texto fica preto */
-    transform: scale(1.05); /* Efeito de leve crescimento */
-    box-shadow: 0 0 15px rgba(0, 191, 255, 0.4);
+    background-color: #8e44ad; /* Fundo fica roxo ao passar o mouse */
+    color: #ffffff; /* Texto fica branco */
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(142, 68, 173, 0.4);
+}
+
+footer a {
+    color: #00FFFF;
+    text-decoration: none;
+    font-weight: 600;
+    transition: text-shadow 0.3s ease;
+}
+
+footer a:hover {
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.8);
 }
