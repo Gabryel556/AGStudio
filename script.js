@@ -46,4 +46,69 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+    tsParticles.load("tsparticles", {
+  fpsLimit: 120,
+  particles: {
+    number: {
+      value: 80,
+      density: {
+        enable: true,
+        value_area: 800,
+      },
+    },
+    color: {
+      value: "#ffffff",
+    },
+    shape: {
+      type: "circle",
+    },
+    opacity: {
+      value: 0.5,
+      random: false,
+    },
+    size: {
+      value: 3,
+      random: { enable: true, minimumValue: 1 },
+    },
+    links: { // A mágica das linhas de conexão
+      enable: true,
+      distance: 150,
+      color: "#ffffff",
+      opacity: 0.4,
+      width: 1,
+    },
+    move: {
+      enable: true,
+      speed: 0.5, // Velocidade bem lenta
+      direction: "none",
+      out_mode: "bounce",
+    },
+  },
+  interactivity: {
+    detect_on: "canvas",
+    events: {
+      onhover: {
+        enable: true,
+        mode: "grab", // Puxa as partículas com o mouse
+      },
+      onclick: {
+        enable: true,
+        mode: "push",
+      },
+      resize: true,
+    },
+    modes: {
+      grab: {
+        distance: 200,
+        line_linked: {
+          opacity: 1,
+        },
+      },
+      push: {
+        particles_nb: 4,
+      },
+    },
+  },
+  retina_detect: true,
+});
 });
