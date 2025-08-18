@@ -46,69 +46,65 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-    tsParticles.load("tsparticles", {
+   
+tsParticles.load("tsparticles", {
   fpsLimit: 120,
   particles: {
     number: {
-      value: 80,
-      density: {
-        enable: true,
-        value_area: 800,
-      },
+      value: 50,
     },
     color: {
-      value: "#ffffff",
+      value: "#a7a7a7",
     },
     shape: {
-      type: "circle",
+      type: "triangle", // Formato de triângulo
     },
     opacity: {
       value: 0.5,
-      random: false,
     },
     size: {
-      value: 3,
-      random: { enable: true, minimumValue: 1 },
+      value: { min: 3, max: 6 },
     },
-    links: { // A mágica das linhas de conexão
+    links: {
       enable: true,
       distance: 150,
-      color: "#ffffff",
+      color: "#444", // Cor da linha
       opacity: 0.4,
       width: 1,
     },
     move: {
       enable: true,
-      speed: 0.5, // Velocidade bem lenta
+      speed: 1,
       direction: "none",
-      out_mode: "bounce",
+      random: true,
+      straight: false,
+      out_mode: "out",
     },
+    rotate: { // Faz os triângulos girarem
+        value: {min: 0, max: 360},
+        direction: "random",
+        animation: {
+            enable: true,
+            speed: 5,
+            sync: false
+        }
+    }
   },
   interactivity: {
-    detect_on: "canvas",
     events: {
       onhover: {
         enable: true,
-        mode: "grab", // Puxa as partículas com o mouse
+        mode: "grab",
       },
-      onclick: {
-        enable: true,
-        mode: "push",
-      },
-      resize: true,
     },
     modes: {
-      grab: {
-        distance: 200,
-        line_linked: {
-          opacity: 1,
-        },
-      },
-      push: {
-        particles_nb: 4,
-      },
+        grab: {
+            distance: 200
+        }
     },
   },
   retina_detect: true,
 });
+
+
 });
